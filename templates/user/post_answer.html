@@ -1,0 +1,61 @@
+{% load static %}
+{% block content %}
+<!DOCTYPE html>
+<html class="no-js" lang="zxx">
+
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="">
+    <meta name="keywords" content="">
+    <meta name="robots" content="index,follow">
+    <title>Coder's Hub</title>
+    <link rel="stylesheet" href="{% static 'user/plugins/bootstrap/css/bootstrap.min.css' %}">
+    <link href="{% static 'user/plugins/icons/css/icons.css' %}" rel="stylesheet">
+    <link href="{% static 'user/plugins/animate/animate.css' %}" rel="stylesheet">
+    <link href="{% static 'user/plugins/bootstrap/css/bootsnav.css' %}" rel="stylesheet">
+    <link href="{% static 'user/css/style.css' %}" rel="stylesheet">
+    <link href="{% static 'user/css/responsiveness.css' %}" rel="stylesheet">
+    <link href="{% static 'user/css/skin/default.css' %}" rel="stylesheet">
+</head>
+
+<body class="blue-skin">
+    {% include 'user/common/header.html' %}
+    <div class="page-title light" style="background:url('{% static "user/img/pa.jpg" %}');>
+        <div class="container">
+            <div class="page-caption">
+                <h2 style="text-align: center;"> Post Your Answer</h2>
+                <p style="text-align: center;"><a href="#" title="Home">Home</a> <i class="ti-arrow-right"></i> Post Your Answer Here! </p>
+            </div>
+        </div>
+    </div>
+    <section class="gray">
+        <div class="container">
+            <h2 align="center">Post Your Answer Here!! </h2><br>
+            <form class="log-form" action="/user/answer_store/{{que_id}}" method="post">
+                {% csrf_token %}
+                <div class="form-group">
+                    <textarea class="form-control" placeholder="Type Your Answer!!" style="height:180px;" name="ans" required></textarea>
+                    <button class="btn theme-btn " name="submit">Submit</button></div>
+            </form>
+        </div>
+    </section>
+    {% include 'user/common/footer.html' %}
+    <script src="{% static 'user/js/jquery.min.js' %}"></script>
+    <script src="{% static 'user/plugins/bootstrap/js/bootstrap.min.js' %}"></script>
+    <script src="{% static 'user/plugins/bootstrap/js/bootsnav.js' %}"></script>
+    <script src="{% static 'user/js/viewportchecker.js' %}"></script>
+    <script src="{% static 'user/plugins/slick-slider/slick.js' %}"></script>
+    <script src="{% static 'user/plugins/bootstrap/js/bootstrap-wysihtml5.js' %}"></script>
+    <script src="{% static 'user/plugins/aos-master/aos.js' %}"></script>
+    <script src="{% static 'user/plugins/nice-select/js/jquery.nice-select.min.js' %}"></script>
+    <script src="{% static 'user/js/custom.js"></script>
+    <script src="{% static 'user/js/jQuery.style.switcher.js' %}"></script>
+    <script>
+    AOS.init();
+    </script>
+</body>
+
+</html>
+{% endblock %}

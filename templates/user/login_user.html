@@ -1,0 +1,91 @@
+{% load static %}
+{% block content %}
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="">
+    <meta name="keywords" content="">
+    <meta name="robots" content="index,follow">
+    <title>Coder's Hub</title>
+    <link rel="stylesheet" href="{% static 'user/plugins/bootstrap/css/bootstrap.min.css' %}">
+    <link href="{% static 'user/plugins/icons/css/icons.css' %}" rel="stylesheet">
+    <link href="{% static 'user/plugins/animate/animate.css' %}" rel="stylesheet">
+    <link href="{% static 'user/plugins/bootstrap/css/bootsnav.css' %}" rel="stylesheet">
+    <link href="{% static 'user/css/style.css' %}" rel="stylesheet">
+    <link href="{% static 'user/css/responsiveness.css' %}" rel="stylesheet">
+    <link href="{% static 'user/css/skin/default.css' %}" rel="stylesheet">
+</head>
+
+<body class="blue-skin">
+    {% include 'user/common/header.html' %}
+    <div class="page-title light" style="background:url('{% static "user/img/slider-2.jpg" %}');">
+        <div class="container">
+            <div class="page-caption">
+                <h2 style="text-align: center;">User Login</h2>
+                <p style="text-align: center;"><a href="#" title="Home">Home</a> <i class="ti-arrow-right"></i>User Login</p>
+            </div>
+        </div>
+    </div>
+    <section class="gray">
+        <div class="container">
+            <ul class="nav nav-tabs nav-advance theme-bg" role="tablist">
+                <li class="nav-item active">
+                    <a class="nav-link" data-toggle="tab" href="#" role="tab">
+                        <i class="ti-user"></i> User</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="/user/login_company/">
+                        <i class="ti-user"></i> Company</a>
+                </li>
+            </ul>
+            <br><br>
+            <div class="container">
+                <div class="log-box" style="max-width: 700px;">
+                    <form class="log-form" method="post" action="/user/login_user_check">
+                        {% csrf_token %}
+                        <div class="form-group">
+                            <label>User Name</label>
+                            <input type="text" class="form-control" placeholder="User Name" name="uname" required>
+                        </div>
+                        <div class="form-group">
+                            <label>Password</label>
+                            <input type="password" class="form-control" placeholder="*********" name="pass" required>
+                        </div>
+                        <div class="form-group">
+                            <span class="custom-checkbox">
+                                <input type="checkbox" id="44" required>
+                                <label for="44"></label>Remember me
+                            </span>
+                            <a href="/user/registration_user/" title="Forget" class="align-middle" style="margin-left: 120px;">Not Registered yet?</a>
+                            <a href="/myadmin/password_reset/$" style="float: right;">Forgot Password ?</a>
+                        </div>
+                        <div class="form-group text-center">
+                            <button type="submit" class="btn theme-btn full-width btn-m">LogIn </button>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </section>
+    {% include 'user/common/footer.html' %}
+    <script src="{% static 'user/js/jquery.min.js' %}"></script>
+    <script src="{% static 'user/plugins/bootstrap/js/bootstrap.min.js' %}"></script>
+    <script src="{% static 'user/plugins/bootstrap/js/bootsnav.js' %}"></script>
+    <script src="{% static 'user/js/viewportchecker.js' %}"></script>
+    <script src="{% static 'user/plugins/slick-slider/slick.js' %}"></script>
+    <script src="{% static 'user/plugins/bootstrap/js/bootstrap-wysihtml5.js' %}"></script>
+    <script src="{% static 'user/plugins/aos-master/aos.js' %}"></script>
+    <script src="{% static 'user/plugins/nice-select/js/jquery.nice-select.min.js' %}"></script>
+    <script src="{% static 'user/js/custom.js"></script>
+    <script src="{% static 'user/js/jQuery.style.switcher.js' %}"></script>
+    <script>
+    AOS.init();
+    </script>
+</body>
+
+</html>
+{% endblock %}

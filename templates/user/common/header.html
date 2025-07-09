@@ -1,0 +1,54 @@
+{% load static %}
+<nav class="navbar navbar-default navbar-mobile navbar-fixed white no-background bootsnav">
+    <div class="container-fluid">
+        <div class="navbar-header">
+            <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#navbar-menu">
+                <i class="fa fa-bars"></i>
+            </button>
+            <a class="navbar-brand" href="/user/dashboard/"><img src="{% static 'user/img/logo.png' %}" alt="" height="70px"></a>
+        </div>
+        <div class="collapse navbar-collapse" id="navbar-menu">
+            <ul class="nav navbar-nav navbar-toggler-left" data-in="fadeInDown" data-out="fadeOutUp">
+                <li class="dropdown">
+                    <a href="/user/dashboard/">Home</a>
+                </li>
+                <li class="dropdown">
+                    <a href="/user/about_us/">About Us</a>
+                </li>
+                <li class="dropdown">
+                    <a href="/user/contact_us/">Contact Us</a>
+                </li>
+                {% if request.user.is_authenticated %}
+                <li class="dropdown">
+                    <a href="/user/project/">Project Upload/Download</a>
+                </li>
+                <li class="dropdown">
+                    <a class="dropdown-toggle">Post Query</a>
+                    <ul class="dropdown-menu animated fadeOutUp">
+                        <li><a href="/user/post_query/"> Add Query </a></li>
+                        <li><a href="/user/all_query/"> View All Query </a></li>
+                    </ul>
+                </li>
+                <li class="dropdown">
+                    <a href="/user/job/">Job</a>
+                </li>
+                <li><a href="/user/feedback/">Post Feedback</a></li>
+                    <li class="dropdown sign-up">
+                            <a class="dropdown-toggle btn-signup red-btn" data-toggle="dropdown"  style="border-radius: 50px;">
+                               Welcome, {{request.user.first_name}}  {{request.user.last_name}}
+                            </a>
+                            <ul class="dropdown-menu animated fadeOutUp">
+                                <li><a href="/user/edit_profile_user/">Edit Profile</a></li>
+                                <li><a href="/user/logout_user/">Sign Out</a></li>
+                            </ul>
+                        </li> 
+                {% else %}
+            </ul>
+            <ul class="nav navbar-nav navbar-right">
+                <li class="br-right"><a href="/user/login_user/"><i class="login-icon ti-user"></i>Login</a></li>
+                <li class="sign-up"><a class="btn-signup red-btn" href="/user/registration_user/" style="border-radius: 50px;"><span class="ti-briefcase"></span>Singup</a></li>
+            </ul>
+            {% endif %}
+        </div>
+    </div>
+</nav>

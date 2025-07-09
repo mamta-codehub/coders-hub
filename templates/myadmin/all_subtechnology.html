@@ -1,0 +1,31 @@
+{% extends 'myadmin/common/layout.html' %}
+{% block content %}
+<div class="col-12">
+    <div class="card">
+        <div class="card-header">
+            <h5 class="card-title">All Subtechnology</h5>
+        </div>
+        <table class="table table-striped table-hover">
+            <thead>
+                <tr>
+                    <th style="width:40%;">ID</th>
+                    <th style="width:30%">Subtechnology name</th>
+                    <th style="width:30%">Technology id</th>
+                    <th>Edit</th>
+                    <th>Delete</th>
+                </tr>
+            </thead>
+            <tbody>
+                {% for row in subtech %}
+                <tr>
+                    <td>{{row.id}}</td>
+                    <td>{{row.subtech_name}}</td>
+                    <td>{{row.tech_id}}</td>
+                    <td><a href="/myadmin/edit_subtechnology/{{row.id}}">Edit</a></td>
+                    <td><a href="/myadmin/delete_subtechnology/{{row.id}}">Delete</a></td>
+                    {% endfor %}
+            </tbody>
+        </table>
+    </div>
+</div>
+{% endblock %}

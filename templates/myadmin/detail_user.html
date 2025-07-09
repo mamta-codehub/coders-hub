@@ -1,0 +1,49 @@
+{% extends 'myadmin/common/layout.html' %}
+{% block content %}
+<h3>&nbsp;&nbsp;&nbsp;User details</h3>
+<br>
+<div class="col-12 col-xl-12">
+    <form method="post" action="/myadmin/details_user/{{result.id}}">
+        <div class="card">
+            <table class="table table-striped table-bordered">
+                <tr>
+                    <td>ID</td>
+                    <td>{{result.id}}</td>
+                </tr>
+                <tr>
+                    <td>First name</td>
+                    <td>{{result.user.first_name}}</td>
+                </tr>
+                <tr>
+                    <td>Last name</td>
+                    <td>{{result.user.last_name}}</td>
+                </tr>
+                <tr>
+                    <td>Email id</td>
+                    <td>{{result.user.email}}</td>
+                </tr>
+                <tr>
+                    <td>Contact</td>
+                    <td>{{result.phone_number}}</td>
+                </tr>
+                <tr>
+                    <td>Gender</td>
+                    <td>{{result.gender}}</td>
+                </tr>
+                <tr>
+                    <td>DOB</td>
+                    <td>{{result.date_of_birth}}</td>
+                </tr>
+                <tr>
+                    <td>Address</td>
+                    <td> {{result.address}}</td>
+                </tr>
+                <tr>
+                    <td>Password</td>
+                    <td>{{result.user.password}}</td>
+                </tr>
+            </table>
+        </div>
+    </form>
+</div>
+{% endblock %}

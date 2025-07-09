@@ -1,0 +1,39 @@
+{% extends 'myadmin/common/layout.html' %}
+{% block content %}
+<div class="col-12 col-xl-12">
+    <div class="card">
+        <form action="" method="post" style="text-align: center;">
+                        {% csrf_token %}
+                        Form:-<input type="date" name="from_date" id="from_date" class="mydate" value="{{f}}" autocomplete="off">
+                        &nbsp;&nbsp;
+                        to:-<input type="date" name="to_date" id="to_date" style="width:50px:" class="mydate" value="{{t}}" autocomplete="off">
+                        &nbsp;&nbsp;
+                       <input type="submit" id="submit" name="submit" value="Search" class="btn btn-primary" required>
+                       <a href="/myadmin/pdf2/" class="btn btn-primary">Export</a>
+
+                       
+    </form>
+        <table class="table table-striped table-hover">
+            <thead>
+                <tr>
+                    <th>ID</th>
+                    <th>RATE</th>
+                    <th>MESSAGE</th>
+                    <th>DATE</th>
+                   
+                </tr>
+            </thead>
+            <tbody>
+                {% for users in user %}
+                <tr>
+                  <td>{{users.id}}</td>
+                  <td>{{users.rate}}</td>
+                  <td>{{users.message}}</td>
+                  <td>{{users.date}}</td>
+                </tr>
+                {% endfor %}
+            </tbody>
+        </table>
+    </div>
+</div>
+{% endblock %}

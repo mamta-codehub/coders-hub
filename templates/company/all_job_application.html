@@ -1,0 +1,27 @@
+{% extends 'company/common/layout.html' %}
+{% block content %}
+<div class="col-12">
+    <div class="card">
+        <table class="table table-striped">
+            <thead>
+                <tr>
+                    <th style="width:25%;">Vacancy ID</th>
+                    <th style="width:25%">User name</th>
+                    <th style="width:25%">Date</th>
+                    <th style="width:25%">Details</th>
+                </tr>
+            </thead>
+            <tbody>
+                {% for row in result %}
+                <tr>
+                    <td>{{row.vacancy_id}}</td>
+                    <td>{{row.user.username}}</td>
+                    <td>{{row.date}}</td>
+                    <td><a href="/company/mydetails/{{row.id}}">Details</a></td>
+                </tr>
+                {% endfor %}
+            </tbody>
+        </table>
+    </div>
+</div>
+{% endblock %}

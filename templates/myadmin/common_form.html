@@ -1,0 +1,101 @@
+{% extends 'myadmin/common/layout.html' %}
+{% block content %}
+<div class="col-md-12 col-xl-12">
+    <div class="card">
+        <div class="card-header">
+            <h5 class="card-title">Horizontal form</h5>
+            <h6 class="card-subtitle text-muted">Horizontal Bootstrap layout.</h6>
+        </div>
+        <div class="card-body">
+            <form>
+                <div class="mb-3 row">
+                    <label class="col-form-label col-sm-2">
+                        Email</label>
+                    <div class="col-sm-7 ">
+                        <input type="email" class="form-control p-2" placeholder="Email">
+                    </div>
+                </div>
+                <div class="mb-3 row">
+                    <label class="col-form-label col-sm-2 text-sm-right">
+                        Textarea</label>
+                    <div class="col-sm-7">
+                        <textarea class="form-control p-2" placeholder="Textarea" rows="3"></textarea>
+                    </div>
+                </div>
+                <fieldset class="mb-3">
+                    <div class="row">
+                        <label class="col-form-label col-sm-2 text-sm-right pt-sm-0">
+                            Radios</label>
+                        <div class="col-sm-10">
+                            <label class="form-check">
+                                <input name="radio-3" type="radio" class="form-check-input" checked>
+                                <span class="form-check-label">Default radio</span>
+                            </label>
+                            <label class="form-check">
+                                <input name="radio-3" type="radio" class="form-check-input">
+                                <span class="form-check-label">Second default radio</span>
+                            </label>
+                            <label class="form-check">
+                                <input name="radio-3" type="radio" class="form-check-input" disabled>
+                                <span class="form-check-label">Disabled radio</span>
+                            </label>
+                        </div>
+                    </div>
+                </fieldset>
+                <br>
+                <div class="mb-3 row">
+                    <label class="col-form-label col-sm-2 text-sm-right pt-sm-0">
+                        Select one</label>
+                    <div class="col-sm-10">
+                        <!-- <label class="form-check "> -->
+                        <input type="checkbox" class="form-check-input">
+                        <span class="form-check-label">one</span>
+                        </label>
+                        <!-- <label class="form-check m-0"> -->
+                        <input type="checkbox" class="form-check-input">
+                        <span class="form-check-label">two</span>
+                        <!--  </label>-->
+                        <!--  </label> -->
+                    </div>
+                    <br>
+                    <br>
+                    <br>
+                    <div class="mb-3 row">
+                        <label class="col-form-label col-sm-2 text-sm-right pt-sm-0"> State</label>
+                        <div class="col-sm-7">
+                            <select id="inputState" class="form-control p-2">
+                                <option selected>Choose...</option>
+                                <option>...</option>
+                            </select>
+                        </div>
+                    </div>
+                    <br>
+                    <br>
+                    <br>
+                    <div class="mb-3 row">
+                        <label class="col-form-label col-sm-2 text-sm-right pt-sm-0">
+                            File input</label>
+                        <div class="col-sm-10">
+                            <input type="file">
+                        </div>
+                    </div>
+                    <br>
+                    <div class="col-sm-10">
+                        <label class="form-check m-0">
+                            <input type="checkbox" class="form-check-input">
+                            <span class="form-check-label">
+                                Check me out</span>
+                        </label>
+                    </div>
+                    <br>
+                    <br>
+                    <div class="mb-3 row">
+                        <div class="col-sm-10 ml-sm-auto">
+                            <button type="submit" class="btn btn-primary">Submit</button>
+                        </div>
+                    </div>
+            </form>
+        </div>
+    </div>
+</div>
+{% endblock %}

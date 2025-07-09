@@ -1,0 +1,29 @@
+{% extends 'company/common/layout.html' %}
+{% block content %}
+<div class="col-12">
+    <div class="card">
+        <table class="table table-striped">
+            <thead>
+                <tr>
+                    <th style="width:25%">ID</th>
+                    <th style="width:30%;">Title</th>
+                    <th style="width:25%">Edit</th>
+                    <th style="width:30%">Delete</th>
+                    <th>Details</th>
+                </tr>
+            </thead>
+            {% for row in result %}
+            <tbody>
+                <tr>
+                    <td>{{row.id}}</td>
+                    <td>{{row.Title}}</td>
+                    <td><a href="/company/company_edit/{{row.id}}">Edit</a></td>
+                    <td><a href="/company/company_delete/{{row.id}}">Delete</a></td>
+                    <td><a href="/company/details/{{row.id}}">Details</a></td>
+                </tr>
+            </tbody>
+            {% endfor %}
+        </table>
+    </div>
+</div>
+{% endblock %}

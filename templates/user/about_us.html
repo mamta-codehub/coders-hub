@@ -1,0 +1,89 @@
+{% load static %}
+{% block content %}
+<!DOCTYPE html>
+<html class="no-js" lang="zxx">
+
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="">
+    <meta name="keywords" content="">
+    <meta name="robots" content="index,follow">
+    <title>Coder's Hub</title>
+    <link rel="stylesheet" href="{% static 'user/plugins/bootstrap/css/bootstrap.min.css' %}">
+    <link href="{% static 'user/plugins/icons/css/icons.css' %}" rel="stylesheet">
+    <link href="{% static 'user/plugins/animate/animate.css' %}" rel="stylesheet">
+    <link href="{% static 'user/plugins/bootstrap/css/bootsnav.css' %}" rel="stylesheet">
+    <link href="{% static 'user/css/style.css' %}" rel="stylesheet">
+        <link href="{% static 'user/css/responsiveness.css' %}" rel="stylesheet">
+        <!-- Custom Color -->
+        <link href="{% static 'user/css/skin/default.css' %}" rel="stylesheet">
+</head>
+
+<body class="blue-skin">
+    {% include 'user/common/header.html' %}
+    <div class="page-title light" style="background:url('{% static "user/img/slider-2.jpg" %}');">
+        <div class="container">
+            <div class="page-caption">
+                <h2 style="text-align: center;">About Us</h2>
+                <p style="text-align: center;"><a href="#" title="Home">Home</a> <i class="ti-arrow-right"></i> About us</p>
+            </div>
+        </div>
+    </div>
+    <section class="gray">
+        <!-- /content-6-main-->
+        <div class="content-6-mian py-5">
+            <div class="container py-lg-5">
+                <div class="content-info-in row">
+                    <div class="col-lg-6 mt-lg-0 mt-5 about-right-faq align-self  pl-lg-4">
+                        <div class="title-content text-left mb-2">
+                            <h5 class="sub-title">About Company</h5>
+                            <h3 class="hny-title">We are qualified &
+                                of experience in this field</h3>
+                        </div>
+                        <p>Coder’s Hub is a Web Application which is a combination of discussion forum where user from the IT field can post their project related queries from different technology in a way of screenshot or description and get solution from others at anytime,anywhere.<br>Project Management where developers can upload project with source code to help beginners in learning new technology along with Project. <br>Job Portal where different companies can post their job vacancy and get efficient and perfect candidate and it is free of cost.</p>
+                        <p>We provide job in different technologies.Companies has to post a job in different technology.We also provide project template for users.We also provide the solution of technical query.</p>
+                        <br />
+                    </div>
+                    <div class="col-lg-6">
+                        <img src="{% static 'user/img/Aboutus.png' %}" alt="" class="img-responsive" style="height:400px;">
+                    </div>
+                </div>
+                <div class="content-info-in row">
+                    <div class="col-lg-6">
+                        <img src="{% static 'user/img/aboutus2.png' %}" alt="" class="img-responsive" style="height:400px;">
+                    </div>
+                    <div class="col-lg-6 mt-lg-0 mt-5 about-right-faq align-self  pl-lg-4">
+                        <div class="title-content text-left mb-2">
+                            <h3 class="hny-title" style="margin-top:100px;">We Focus On:</h3>
+                        </div>
+                        <ol type="a" style="position: relative;left: 15px;top: 10px; line-height: 30px;">
+                            <li>Provide Solution to the queries Which are having while developing the projects.</li>
+                            <li>Overcome Gaps between Employer and Job Seeker.</li>
+                            <li>Project Upload and Download for Learing Purpose at a free of cost.</li>
+                            <li>Candidates can upload their resumes for free and search job across any field without having to pay any fee to the job portal..</li>
+                        </ol>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    {% include 'user/common/footer.html' %}
+    <script src="{% static 'user/js/jquery.min.js' %}"></script>
+    <script src="{% static 'user/plugins/bootstrap/js/bootstrap.min.js' %}"></script>
+    <script src="{% static 'user/plugins/bootstrap/js/bootsnav.js' %}"></script>
+    <script src="{% static 'user/js/viewportchecker.js' %}"></script>
+    <script src="{% static 'user/plugins/slick-slider/slick.js' %}"></script>
+    <script src="{% static 'user/plugins/bootstrap/js/bootstrap-wysihtml5.js' %}"></script>
+    <script src="{% static 'user/plugins/aos-master/aos.js' %}"></script>
+    <script src="{% static 'user/plugins/nice-select/js/jquery.nice-select.min.js' %}"></script>
+    <script src="{% static 'user/js/custom.js"></script>
+    <script src="{% static 'user/js/jQuery.style.switcher.js' %}"></script>
+    <script>
+    AOS.init();
+    </script>
+</body>
+
+</html>
+{% endblock %}

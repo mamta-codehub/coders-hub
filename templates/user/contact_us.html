@@ -1,0 +1,101 @@
+{% load static %}
+{% block content %}
+<!DOCTYPE html>
+<html class="no-js" lang="zxx">
+
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="">
+    <meta name="keywords" content="">
+    <meta name="robots" content="index,follow">
+    <title>Coder's Hub</title>
+    <link rel="stylesheet" href="{% static 'user/plugins/bootstrap/css/bootstrap.min.css' %}">
+    <link href="{% static 'user/plugins/icons/css/icons.css' %}" rel="stylesheet">
+    <link href="{% static 'user/plugins/animate/animate.css' %}" rel="stylesheet">
+    <link href="{% static 'user/plugins/bootstrap/css/bootsnav.css' %}" rel="stylesheet">
+    <link href="{% static 'user/css/style.css' %}" rel="stylesheet">
+    <link href="{% static 'user/css/responsiveness.css' %}" rel="stylesheet">
+    <link href="{% static 'user/css/skin/default.css' %}" rel="stylesheet">
+</head>
+
+<body class="blue-skin">
+    {% include 'user/common/header.html' %}
+    <div class="page-title light" style="background:url('{% static "user/img/contact.jpg" %}');">
+        <div class="container">
+            <div class="page-caption">
+                <h2 style="text-align: center;">Get In Touch</h2>
+                <p style="text-align: center;"><a href="#" title="Home">Home</a> <i class="ti-arrow-right"></i> Contact Us</p>
+            </div>
+        </div>
+    </div>
+    <section class="gray">
+        <div class="container">
+            <div class="col-md-6 col-sm-6">
+                <div class="title-content text-left">
+                    <h5 class="sub-title">Drop Us</h5>
+                    <br />
+                    <h2 class="hny-title">Get In Touch</h2>
+                    <p class="mt-4 mb-4 pr-lg-5">Hi there, We are available 24/7 by fax, e-mail or by phone. Drop us line so we can talk
+                        futher about that.</p>
+                    <h5 class="mt-4">Email:</h5>
+                    <p> <a href="mailto:info@example.com">
+                            Codershub@gmail.com</a></p>
+                    <h5 class="mt-4">Address:</h5>
+                    <p>25,Heritage Horizon,Opp Hotel Dev Corporate, OFF C.G., C.G.Road, Umashankar Joshi Marg, Vasant Vihar, Navrangpura, Ahmedabad, Gujarat 380009</p>
+                    <h5 class="mt-4">Contact:</h5>
+                    <p class="margin-top"><a href="tel:+(21) 255 999 8899">+(91)
+                            8160468402</a></p>
+                    <img src="{% static 'user/img/contactus.png' %}" alt="" class="img-responsive" style="height: 350px;">
+                </div>
+            </div>
+            <div class="col-md-6 col-sm-6">
+                <div class="title-content text-left">
+                    <h1>Send Us A Message </h1>
+                </div>
+                <div class="log-box">
+                    <form class="log-form" action="/user/store_contact" method="post">
+                        {% csrf_token %}
+                        <div class="form-group">
+                            <label>Name:</label>
+                            <input type="text" class="form-control" placeholder="Name" name="name" required />
+                        </div>
+                        <div class="form-group">
+                            <label>Email:</label>
+                            <input type="email" class="form-control" placeholder="Email" name="email" required />
+                        </div>
+                        <div class="form-group">
+                            <label>Phone No</label>
+                            <input type="text" class="form-control" placeholder="Enter Your Phone No" name="number" required>
+                        </div>
+                        <div class="form-group">
+                            <label>Message:</label>
+                            <textarea class="form-control height-120" placeholder="Message" name="message" required></textarea>
+                        </div>
+                        <div class="form-group text-center">
+                            <button class="btn theme-btn " name="submit"> SUBMIT </button>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </section>
+    {% include 'user/common/footer.html' %}
+    <script src="{% static 'user/js/jquery.min.js' %}"></script>
+    <script src="{% static 'user/plugins/bootstrap/js/bootstrap.min.js' %}"></script>
+    <script src="{% static 'user/plugins/bootstrap/js/bootsnav.js' %}"></script>
+    <script src="{% static 'user/js/viewportchecker.js' %}"></script>
+    <script src="{% static 'user/plugins/slick-slider/slick.js' %}"></script>
+    <script src="{% static 'user/plugins/bootstrap/js/bootstrap-wysihtml5.js' %}"></script>
+    <script src="{% static 'user/plugins/aos-master/aos.js' %}"></script>
+    <script src="{% static 'user/plugins/nice-select/js/jquery.nice-select.min.js' %}"></script>
+    <script src="{% static 'user/js/custom.js"></script>
+    <script src="{% static 'user/js/jQuery.style.switcher.js' %}"></script>
+    <script>
+    AOS.init();
+    </script>
+</body>
+
+</html>
+{% endblock %}

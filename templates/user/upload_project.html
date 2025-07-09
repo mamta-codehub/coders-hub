@@ -1,0 +1,147 @@
+{% load static %}
+{% block content %}
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="">
+    <meta name="keywords" content="">
+    <meta name="robots" content="index,follow">
+    <title>Coder's Hub</title>
+    <link rel="stylesheet" href="{% static 'user/plugins/bootstrap/css/bootstrap.min.css' %}">
+    <link href="{% static 'user/plugins/icons/css/icons.css' %}" rel="stylesheet">
+    <link href="{% static 'user/plugins/animate/animate.css' %}" rel="stylesheet">
+    <link href="{% static 'user/plugins/bootstrap/css/bootsnav.css' %}" rel="stylesheet">
+    <link href="{% static 'user/css/style.css' %}" rel="stylesheet">
+    <link href="{% static 'user/css/responsiveness.css' %}" rel="stylesheet">
+    <link href="{% static 'user/css/skin/default.css' %}" rel="stylesheet">
+</head>
+
+<body class="blue-skin">
+    {% include 'user/common/header.html' %}
+    <div class="page-title light" style="background:url('{% static "user/img/upload.jpg" %}');">
+        <div class="container">
+            <div class="page-caption">
+                <h2 style="text-align: center;">Upload Project </h2>
+                <p style="text-align: center;"><a href="#" title="Home">Home</a> <i class="ti-arrow-right"></i> Upload Your Project</p>
+            </div>
+        </div>
+    </div>
+    <section class="gray">
+        <div class="title-content text-center">
+            <h2 class="hny-title">Upload Your Project Here ! </h2><br>
+        </div>
+        <div class="container">
+            <div class="log-box" style="max-width:1000px;">
+                <form class="log-form" action="/user/upload_project_store" method="post" enctype="multipart/form-data">
+                    {% csrf_token %}
+                    <div class="row">
+                        <div class="col-md-12">
+                            <div class="form-group">
+                                <label>Project Title</label>
+                                <input type="text" class="form-control" placeholder="Enter Your Project Title.." name="title" required>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-md-6">
+                            <div class="form-group">
+                                <label>Select Technology</label>
+                                <!-- <input type="dropdown" name="" class="form-control" placeholder="---Select Technology---"> -->
+                                <select id="Select Technology" class="form-control" name="tech">
+                                    <option value="Select Technology">----Select Technology----</option>
+                                    {% for t in tech %}
+                                    <option value="{{t.id}}">{{t.tech_name}}</option>
+                                    {% endfor %}
+                                </select>
+                            </div>
+                        </div>
+                        <div class="col-md-6">
+                            <div class="form-group">
+                                <label>Select Sub Technology</label>
+                                <!-- <input type="dropdown" name="" class="form-control" placeholder="---Select Technology---"> -->
+                                <select id="Select Technology" class="form-control" name="subtech">
+                                    <option value="Select Technology">----Select Sub Technology----</option>
+                                    {% for sub in subtech %}
+                                    <option value="{{sub.id}}">{{sub.subtech_name}}</option>
+                                    {% endfor %}
+                                </select>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="form-group">
+                            <div class="col-md-12">
+                                <label>Project Abstract</label>
+                                <input type="text" name="abstract" class="form-control" placeholder="Enter Your Project Abstract.." required>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="form-group">
+                            <div class="col-md-12">
+                                <label>Project Description..</label>
+                                <textarea type="text" name="desc" class="form-control" placeholder="Enter Your Project Description.." required></textarea>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-md-6">
+                            <div class="form-group">
+                                <label>Database Name</label>
+                                <input type="text" class="form-control" placeholder="Enter Your Database.." name="data" required>
+                            </div>
+                        </div>
+                        <div class="col-md-6">
+                            <div class="form-group">
+                                <label>Development Tool</label>
+                                <input type="text" class="form-control" placeholder="Enter Your Development Tool.." name="tool" required>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-md-6">
+                            <div class="form-group">
+                                <label>Project Document </label>
+                                <input type="file" class="form-control" name="file" required>
+                            </div>
+                        </div>
+                        <div class="col-md-6">
+                            <div class="form-group">
+                                <label>Source Code.</label>
+                                <input type="file" class="form-control" name="source" required>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-md-12">
+                            <div class="form-group text-center mrg-top-15">
+                                <button type="submit" class="btn theme-btn btn-m text-center"> UPLOAD </button>
+                            </div>
+                        </div>
+                    </div>
+            </div>
+            </form>
+        </div>
+    </section>
+    <script src="{% static 'user/js/jquery.min.js' %}"></script>
+    <script src="{% static 'user/plugins/bootstrap/js/bootstrap.min.js' %}"></script>
+    <script src="{% static 'user/plugins/bootstrap/js/bootsnav.js' %}"></script>
+    <script src="{% static 'user/js/viewportchecker.js' %}"></script>
+    <script src="{% static 'user/plugins/slick-slider/slick.js' %}"></script>
+    <script src="{% static 'user/plugins/bootstrap/js/bootstrap-wysihtml5.js' %}"></script>
+    <script src="{% static 'user/plugins/aos-master/aos.js' %}"></script>
+    <script src="{% static 'user/plugins/nice-select/js/jquery.nice-select.min.js' %}"></script>
+    <script src="{% static 'user/js/custom.js"></script>
+    <script src="{% static 'user/js/jQuery.style.switcher.js' %}"></script>
+    <script>
+    AOS.init();
+    </script>
+</body>
+{% include 'user/common/footer.html' %}
+
+</html>
+{% endblock %}

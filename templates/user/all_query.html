@@ -1,0 +1,77 @@
+% load static %}
+{% block content %}
+<!DOCTYPE html>
+<html class="no-js" lang="zxx">
+
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="">
+    <meta name="keywords" content="">
+    <meta name="robots" content="index,follow">
+    <title>Coder's Hub</title>
+    <link rel="stylesheet" href="{% static 'user/plugins/bootstrap/css/bootstrap.min.css' %}">
+    <link href="{% static 'user/plugins/icons/css/icons.css' %}" rel="stylesheet">
+    <link href="{% static 'user/plugins/animate/animate.css' %}" rel="stylesheet">
+    <link href="{% static 'user/plugins/bootstrap/css/bootsnav.css' %}" rel="stylesheet">
+    <link href="{% static 'user/css/style.css' %}" rel="stylesheet">
+    <link href="{% static 'user/css/responsiveness.css' %}" rel="stylesheet">
+    <link href="{% static 'user/css/skin/default.css' %}" rel="stylesheet">
+</head>
+
+<body class="blue-skin">
+    {% include 'user/common/header.html' %}
+    <div class="page-title light" style="background:url('{% static "user/img/vq.jpg" %}');>
+        <div class="container">
+            <div class="page-caption">
+                <h2 style="text-align: center;"> View All Query </h2>
+                <p style="text-align: center;"><a href="#" title="Home">Home</a> <i class="ti-arrow-right"></i> View All Query Here </p>
+            </div>
+        </div>
+    </div>
+    <section class="gray">
+        <div class="container">
+            <table border="1" align="center" cellpadding="10" cellspacing="1" width="1000" height="70" class="table-hover">
+                <h2 align="center">View All Queries Here!!</h2><br>
+                <tr style="background-color:#f6fafd; color: black;text-align: center; font-weight: bold; font-size: 17px;">
+                    <th>ID</th>
+                    <th>Title</th>
+                    <th>Description</th>
+                    <th>Technology</th>
+                    <th>SubTechnology</th>
+                    <th>Posted Date</th>
+                    <th>View More Details</th>
+                </tr>
+                {% for row in result %}
+                <tr>
+                    <td>{{row.id}}</td>
+                    <td>{{row.title}}</td>
+                    <td>{{row.description}}</td>
+                    <td>{{row.tech.tech_name}}</td>
+                    <td>{{row.subtech.subtech_name}}</td>
+                    <td>{{row.date}}</td>
+                    <td><a href="/user/query_moredetails/{{row.id}}">View More Details</a></td>
+                </tr>
+                {% endfor %}
+            </table>
+        </div>
+    </section>
+    {% include 'user/common/footer.html' %}
+    <script src="{% static 'user/js/jquery.min.js' %}"></script>
+    <script src="{% static 'user/plugins/bootstrap/js/bootstrap.min.js' %}"></script>
+    <script src="{% static 'user/plugins/bootstrap/js/bootsnav.js' %}"></script>
+    <script src="{% static 'user/js/viewportchecker.js' %}"></script>
+    <script src="{% static 'user/plugins/slick-slider/slick.js' %}"></script>
+    <script src="{% static 'user/plugins/bootstrap/js/bootstrap-wysihtml5.js' %}"></script>
+    <script src="{% static 'user/plugins/aos-master/aos.js' %}"></script>
+    <script src="{% static 'user/plugins/nice-select/js/jquery.nice-select.min.js' %}"></script>
+    <script src="{% static 'user/js/custom.js"></script>
+    <script src="{% static 'user/js/jQuery.style.switcher.js' %}"></script>
+    <script>
+    AOS.init();
+    </script>
+</body>
+
+</html>
+{% endblock %}

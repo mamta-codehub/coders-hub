@@ -1,0 +1,107 @@
+{% load static %}
+{% block content %}
+<!DOCTYPE html>
+<html class="no-js" lang="zxx">
+
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="">
+    <meta name="keywords" content="">
+    <meta name="robots" content="index,follow">
+    <title>Coder's Hub</title>
+    <link rel="stylesheet" href="{% static 'user/plugins/bootstrap/css/bootstrap.min.css' %}">
+    <link href="{% static 'user/plugins/icons/css/icons.css' %}" rel="stylesheet">
+    <link href="{% static 'user/plugins/animate/animate.css' %}" rel="stylesheet">
+    <link href="{% static 'user/plugins/bootstrap/css/bootsnav.css' %}" rel="stylesheet">
+    <link href="{% static 'user/css/style.css' %}" rel="stylesheet">
+    <link href="{% static 'user/css/responsiveness.css' %}" rel="stylesheet">
+    <link href="{% static 'user/css/skin/default.css' %}" rel="stylesheet">
+</head>
+
+<body class="blue-skin">
+    {% include 'user/common/header.html' %}
+    <div class="page-title light" style="background:url('{% static "user/img/que.jpg" %}');">
+        <div class="container">
+            <div class="page-caption">
+                <h2 style="text-align: center;"> Post Query </h2>
+                <p style="text-align: center;"><a href="#" title="Home">Home</a> <i class="ti-arrow-right"></i> Post Query </p>
+            </div>
+        </div>
+    </div>
+    <section class="gray">
+        <div class="container">
+            <div class="col-md-4 col-sm-8"><br><br>
+                <img src="{% static 'user/img/postque.png' %}" alt="" class="img-responsive" style="margin-top:80px;height: 450px;">
+            </div>
+            <div class="col-md-8 col-sm-4">
+                <div class="title-content text-center ">
+                    <h2>Post Query Here!</h2>
+                </div><br>
+                <div class="log-box">
+                    <form class="log-form" action="/user/post_query_store" method="post" enctype="multipart/form-data">
+                        {% csrf_token %}
+                        <div class="form-group">
+                            <label>Query Title</label>
+                            <input type="text" class="form-control" placeholder="Enter Your Query Title" name="title" required>
+                        </div>
+                        <div class="row">
+                            <div class="col-md-6">
+                                <div class="form-group">
+                                    <label>Select Technology</label>
+                                    <!-- <input type="dropdown" name="" class="form-control" placeholder="---Select Technology---"> -->
+                                    <select id="Select Technology" class="form-control" name="tech">
+                                        <option value="Select Technology">----Select Technology----</option>
+                                        {% for t in tech %}
+                                        <option value="{{t.id}}">{{t.tech_name}}</option>
+                                        {% endfor %}
+                                    </select>
+                                </div>
+                            </div>
+                            <div class="col-md-6">
+                                <div class="form-group">
+                                    <label>Select Sub Technology</label>
+                                    <!-- <input type="dropdown" name="" class="form-control" placeholder="---Select Technology---"> -->
+                                    <select id="Select subtechnology" class="form-control" name="subtech">
+                                        <option value="Select Subtechnology">----Select Sub Technology----</option>
+                                        {% for s in subtech %}
+                                        <option value="{{s.id}}">{{s.subtech_name}}</option>
+                                        {% endfor %}
+                                    </select>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <label>Query Description </label>
+                            <textarea class="form-control height-120 col-md-6" placeholder="Message" name="desc" required></textarea>
+                        </div>
+                        <div class="form-group">
+                            <label>Choose Your File</label>
+                            <input type="file" class="form-control" name="file" required>
+                        </div>
+                        <div class="form-group text-right">
+                            <button class="btn theme-btn " name="submit"> SUBMIT </button>
+                        </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    {% include 'user/common/footer.html' %}
+    <script src="{% static 'user/js/jquery.min.js' %}"></script>
+    <script src="{% static 'user/plugins/bootstrap/js/bootstrap.min.js' %}"></script>
+    <script src="{% static 'user/plugins/bootstrap/js/bootsnav.js' %}"></script>
+    <script src="{% static 'user/js/viewportchecker.js' %}"></script>
+    <script src="{% static 'user/plugins/slick-slider/slick.js' %}"></script>
+    <script src="{% static 'user/plugins/bootstrap/js/bootstrap-wysihtml5.js' %}"></script>
+    <script src="{% static 'user/plugins/aos-master/aos.js' %}"></script>
+    <script src="{% static 'user/plugins/nice-select/js/jquery.nice-select.min.js' %}"></script>
+    <script src="{% static 'user/js/custom.js"></script>
+    <script src="{% static 'user/js/jQuery.style.switcher.js' %}"></script>
+    <script>
+    AOS.init();
+    </script>
+</body>
+
+</html>
+{% endblock %}

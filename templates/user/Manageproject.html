@@ -1,0 +1,73 @@
+{% load static %}
+{% block content %}
+<!DOCTYPE html>
+<html class="no-js" lang="zxx">
+
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="">
+    <meta name="keywords" content="">
+    <meta name="robots" content="index,follow">
+    <title>Coder's Hub</title>
+    <link rel="stylesheet" href="{% static 'user/plugins/bootstrap/css/bootstrap.min.css' %}">
+    <link href="{% static 'user/plugins/icons/css/icons.css' %}" rel="stylesheet">
+    <link href="{% static 'user/plugins/animate/animate.css' %}" rel="stylesheet">
+    <link href="{% static 'user/plugins/bootstrap/css/bootsnav.css' %}" rel="stylesheet">
+    <link href="{% static 'user/css/style.css' %}" rel="stylesheet">
+    <link href="{% static 'user/css/responsiveness.css' %}" rel="stylesheet">
+    <link href="{% static 'user/css/skin/default.css' %}" rel="stylesheet">
+</head>
+
+<body class="blue-skin">
+    {% include 'user/common/header.html' %}
+    <div class="page-title light" style="background:url('{% static "user/img/project.jpg" %}');">
+        <div class="container">
+            <div class="page-caption">
+                <h2 style="text-align: center;">Project Management</h2>
+                <p style="text-align: center;"><a href="#" title="Home">Home</a> <i class="ti-arrow-right"></i> Project Management</p>
+            </div>
+        </div>
+    </div>
+    <section class="gray">
+        <div class="content-6-mian py-5">
+            <div class="container py-lg-5">
+                <div class="content-info-in row">
+                    <div class="col-lg-6">
+                        <img src="{% static 'user/img/proman.png' %}" alt="" class="img-responsive" style="height:400px;">
+                    </div>
+                    <div class="col-lg-6 mt-lg-0 mt-5 about-right-faq align-self  pl-lg-4">
+                        <div class="title-content text-left mb-2">
+                            
+                            <div class="title-content text-left">
+                                <h3 class="hny-title">Project Management ! </h3>
+                            </div>
+                        </div>
+                        <p style="text-align:justify;">Here in our website users can upload their projects which are already created with source code if any user need a reference project, they can download these projects and develop their own project.When ever we try to create a project the first questions will be how the projects are created how the designs are done for all this questions we have another feature that is project management.And also, users can make their own projects by taking this uploaded project as a reference.In this feature user can download the entire project document with source code. This feature will help the users to learn the new technology along with project.</p>
+                    </div>
+                    <div class="form-group text-left">
+                        <button class="btn theme-btn"><a href="/user/login_user/" style="text-decoration: none;color: white;">For Upload and Download Project</a></button></div>
+                </div>
+            </div>
+        </div>
+        </div>
+    </section>
+    {% include 'user/common/footer.html' %}
+    <script src="{% static 'user/js/jquery.min.js' %}"></script>
+    <script src="{% static 'user/plugins/bootstrap/js/bootstrap.min.js' %}"></script>
+    <script src="{% static 'user/plugins/bootstrap/js/bootsnav.js' %}"></script>
+    <script src="{% static 'user/js/viewportchecker.js' %}"></script>
+    <script src="{% static 'user/plugins/slick-slider/slick.js' %}"></script>
+    <script src="{% static 'user/plugins/bootstrap/js/bootstrap-wysihtml5.js' %}"></script>
+    <script src="{% static 'user/plugins/aos-master/aos.js' %}"></script>
+    <script src="{% static 'user/plugins/nice-select/js/jquery.nice-select.min.js' %}"></script>
+    <script src="{% static 'user/js/custom.js"></script>
+    <script src="{% static 'user/js/jQuery.style.switcher.js' %}"></script>
+    <script>
+    AOS.init();
+    </script>
+</body>
+
+</html>
+{% endblock %}

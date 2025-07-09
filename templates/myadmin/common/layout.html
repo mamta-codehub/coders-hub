@@ -1,0 +1,38 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<meta http-equiv="content-type" content="text/html;charset=UTF-8" />
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta name="description" content="Responsive Bootstrap 5 Admin &amp; Dashboard Template">
+    <meta name="author" content="Bootlab">
+    <title>Coder's Hub Admin</title>
+    <link rel="canonical" href="dashboard-default.html" />
+    <link rel="shortcut icon" href="img/favicon.ico">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500&amp;display=swap" rel="stylesheet">
+    <link href="{% static 'myadmin/css/light.css' %}" rel="stylesheet">
+</head>
+
+<body data-theme="default" data-layout="fluid" data-sidebar-position="left" data-sidebar-behavior="sticky">
+    <div class="wrapper">
+        {% include 'myadmin/common/sidebar.html' %}
+        <div class="main">
+            {% include 'myadmin/common/header.html' %}
+            <main class="content">
+                <div class="container-fluid p-0">
+                    {% block content %}
+                    {% endblock %}
+                </div>
+        </div>
+    </div>
+    </div>
+    </main>
+    {% include 'myadmin/common/footer.html' %}
+    </div>
+    </div>
+    <script src="{% static 'myadmin/js/app.js' %}"></script>
+</body>
+
+</html>

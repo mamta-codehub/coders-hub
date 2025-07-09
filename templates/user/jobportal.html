@@ -1,0 +1,76 @@
+{% load static %}
+{% block content %}
+<!DOCTYPE html>
+<html class="no-js" lang="zxx">
+
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="">
+    <meta name="keywords" content="">
+    <meta name="robots" content="index,follow">
+    <title>Coder's Hub</title>
+    <link rel="stylesheet" href="{% static 'user/plugins/bootstrap/css/bootstrap.min.css' %}">
+    <link href="{% static 'user/plugins/icons/css/icons.css' %}" rel="stylesheet">
+    <link href="{% static 'user/plugins/animate/animate.css' %}" rel="stylesheet">
+    <link href="{% static 'user/plugins/bootstrap/css/bootsnav.css' %}" rel="stylesheet">
+    <link href="{% static 'user/css/style.css' %}" rel="stylesheet">
+    <link href="{% static 'user/css/responsiveness.css' %}" rel="stylesheet">
+    <link href="{% static 'user/css/skin/default.css' %}" rel="stylesheet">
+</head>
+
+<body class="blue-skin">
+    {% include 'user/common/header.html' %}
+    <div class="page-title light" style="background:url('{% static "user/img/job.jpg" %}');">
+        <div class="container">
+            <div class="page-caption">
+                <h2 style="text-align: center;">Job Portal</h2>
+                <p style="text-align: center;"><a href="#" title="Home">Home</a> <i class="ti-arrow-right"></i> Job Portal</p>
+            </div>
+        </div>
+    </div>
+    <section class="gray">
+        <!-- /content-6-main-->
+        <div class="content-6-mian py-5">
+            <div class="container py-lg-5">
+                <div class="content-info-in row">
+                    <div class="col-lg-6 mt-lg-0 mt-5 about-right-faq align-self  pl-lg-4">
+                        <div class="title-content text-left mb-2">
+                            
+                        </div>
+                        <div class="title-content text-left mb-2">
+                            <h3 class="hny-title">Job Portal ! </h3>
+                        </div><br>
+                        <p style="text-align:justify;">Here in our website the last service is <b>Job Portal</b>.In job portal where different companies can post their job vacancy and get efficient and perfect candidate.Job portal feature makes it easy to find the best jobs for you at the click of a button.Job portal is the feature to help the companies to post their vacancies for free and users can apply for that jobs This feature will help the companies to get required talented candidates and will help the users to get their dream job .Job portal lets you find your dream job and build your career.Job portal aims to help you find a job suited to your personality, skills, and experience. We help you to find the perfect jobs for you.Are you looking for a job? Introducing job portal! We help you find vacancies that match your skills and preferences. We will help you to find a perfect job for you</p>
+                        <br />
+                    </div>
+                    <div class="col-lg-6">
+                        <img src="{% static 'user/img/jp.png' %}" alt="" class="img-responsive" style="height:400px;">
+                    </div>
+                </div>
+                <div class="form-group text-left">
+                    <button class="btn theme-btn"><a href="/user/login_user/" style="text-decoration: none;color: white;">For Apply the Job</a></button>
+                </div>
+            </div>
+        </div>
+        </div>
+    </section>
+    {% include 'user/common/footer.html' %}
+    <script src="{% static 'user/js/jquery.min.js' %}"></script>
+    <script src="{% static 'user/plugins/bootstrap/js/bootstrap.min.js' %}"></script>
+    <script src="{% static 'user/plugins/bootstrap/js/bootsnav.js' %}"></script>
+    <script src="{% static 'user/js/viewportchecker.js' %}"></script>
+    <script src="{% static 'user/plugins/slick-slider/slick.js' %}"></script>
+    <script src="{% static 'user/plugins/bootstrap/js/bootstrap-wysihtml5.js' %}"></script>
+    <script src="{% static 'user/plugins/aos-master/aos.js' %}"></script>
+    <script src="{% static 'user/plugins/nice-select/js/jquery.nice-select.min.js' %}"></script>
+    <script src="{% static 'user/js/custom.js"></script>
+    <script src="{% static 'user/js/jQuery.style.switcher.js' %}"></script>
+    <script>
+    AOS.init();
+    </script>
+</body>
+
+</html>
+{% endblock %}

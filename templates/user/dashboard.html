@@ -1,0 +1,160 @@
+{% extends 'user/common/layout.html' %}
+{% block content %}
+{% load static %}
+
+<section>
+    <div class="content-6-mian">
+        <div class="container">
+            <div class="content-info-in row">
+                <div class="col-lg-6">
+                    <img src="{% static 'user/img/aboutus.jpg' %}" alt="" class="img-responsive">
+                </div>
+                <div class="top col-lg-6 mt-lg-0 mt-5 about-right-faq align-self">
+                    <div class="title-content text-left">
+                        <div class="title-content text-left">
+                            <h4 class="hny-title">Who We Are</h4>
+                            <h2 class="hny-title" style="color: black;"><b>We have 1+ years
+                                    of experience in IT field.</b></h2>
+                        </div>
+                        <p style="text-align:justify; font-size:18px;">Coder’s Hub is a Web Application which is the combination of discussion forum where user from the It field can post their project related queries from different technology with screenshot and get solution from others</p>
+                    </div>
+                    <div class="form-group text-left">
+                        <button class="btn theme-btn"><a href="/user/login_user/" style="text-decoration: none;color: white;">Read More</a></button></div>
+                </div>
+            </div>
+        </div>
+    </div>
+    </div>
+</section>
+<section class="gray">
+    <div class="container">
+        <div class="row" data-aos="fade-up">
+            <div class="col-md-12">
+                <div class="heading">
+                    <h1>Our Services</h1>
+                    <p style="font-size: 20px;">In Our Company <b>Coder's Hub</b> their are total 3 services..</p>
+                </div>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-md-4 col-sm-6">
+                <div class="blog-box blog-grid-box">
+                    <div class="blog-grid-box-img">
+                        <img src="{% static "user/img/getand.jpg" %}" class="img-responsive" alt="" />
+                    </div>
+                    <div class="blog-grid-box-content">
+                        <h4>Get and Answer</h4>
+                        <p>Here, the word <b>'Get'</b> means various types of queries posted by the users and the word <b>'Answer'</b>means users can give answer for that queries .</p>
+                        <div class="form-group text-left">
+                            <button class="btn theme-btn"><a href="/user/getandanswer/" style="text-decoration: none;color: white;">Read more</a></button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-4 col-sm-6">
+                <div class="blog-box blog-grid-box">
+                    <div class="blog-grid-box-img">
+                        <img src="{% static "user/img/projectman.jpg" %}" class="img-responsive" alt="" />
+                    </div>
+                    <div class="blog-grid-box-content">
+                        <h4>Project Management</h4>
+                        <p>Here in our website users can upload their projects which are already created with source code if any user need a reference project, they can download these projects and develop their own project.</p>
+                        <button class="btn theme-btn"><a href="/user/Manageproject/" style="text-decoration: none;color: white;">Read more</a></button>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-4 col-sm-6">
+                <div class="blog-box blog-grid-box">
+                    <div class="blog-grid-box-img">
+                        <img src="{% static "user/img/jobpor.jpg" %}" class="img-responsive" alt="" />
+                    </div>
+                    <div class="blog-grid-box-content">
+                        <h4>Job Portal</h4>
+                        <p>Here in our website the last service is <b>Job Portal</b>.In job portal where different companies can post their job vacancy and get efficient and perfect candidate.Job portal feature makes it easy to find the best jobs.</p>
+                        <button class="btn theme-btn"><a href="/user/jobportal/" style="text-decoration: none;color: white;">Read more</a></button>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-md-12">
+                <div class="bs-example">
+                    <ul class="pagination">
+                        <li><a href="#">«</a></li>
+                        <li><a href="#">1</a></li>
+                        <li><a href="#">»</a></li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+<!-- ================= Category start ========================= -->
+<section class="image-bg" style="background:url('{% static "user/img/jobpro.jpg" %}') no-repeat;" data-overlay="5">
+    <div class="container">
+        <div class="row" data-aos="fade-up">
+            <div class="col-md-12">
+                <div class="heading">
+                    <h5 class="sub-title" style="color: white;">Why Choose Us</h5>
+                    <h2 style="color: white;">Great Job Provider</h2>
+                    <p style="font-size:20px; color: white;">Job Provider in IT Field.Come and Find Your Future With Us.</p>
+                </div>
+            </div>
+        </div>
+        <div class="row" data-aos="fade-up">
+            <div class="employer-slide">
+                <!-- Single Employer -->
+                <div class="employer-widget">
+                    <div class="u-content">
+                        <div class="avatar box-50">
+                            <a href="#"><img class="img-responsive" src="{% static "user/img/web.jpg" %}" alt=""></a>
+                        </div>
+                        <h5><a href="#">Web Development</a></h5>
+                        <p>Web development is the work involved in developing a Web site for the Internet or an intranet</p>
+                    </div>
+                </div>
+                <!-- Single Employer -->
+                <div class="employer-widget">
+                    <div class="u-content">
+                        <div class="avatar box-80">
+                            <a href="#"><img class="img-responsive" src="{% static "user/img/soft.jpg" %}" alt="" alt=""></a>
+                        </div>
+                        <h5><a href="#">Software Testing</a></h5>
+                        <p class="text-muted"> the process of evaluating and verifying that a software product or application does what it is supposed to do.</p>
+                    </div>
+                </div>
+                <!-- Single Employer -->
+                <div class="employer-widget">
+                    <div class="u-content">
+                        <div class="avatar box-80">
+                            <a href="#"><img class="img-responsive" src="{% static "user/img/cloud.jpg" %}" alt=""></a>
+                        </div>
+                        <h5><a href="#">Cloud Architect</a></h5>
+                        <p class="text-muted">Cloud computing architecture refers to the components and subcomponents required for cloud computing.</p>
+                    </div>
+                </div>
+                <!-- Single Employer -->
+                <div class="employer-widget">
+                    <div class="u-content">
+                        <div class="avatar box-80">
+                            <a href="#"><img class="img-responsive" src="{% static "user/img/mobile.jpg" %}" alt=""></a>
+                        </div>
+                        <h5><a href="#">Mobile App Developer</a></h5>
+                        <p class="text-muted">A mobile app developer is a software professional who creates applications for smartphones.</p>
+                    </div>
+                </div>
+                <!-- Single Employer -->
+                <div class="employer-widget">
+                    <div class="u-content">
+                        <div class="avatar box-80">
+                            <a href="#"><img class="img-responsive" src="{% static "user/img/ui.jpg" %}" alt=""></a>
+                        </div>
+                        <h5><a href="#">UI/UX Designer</a></h5>
+                        <p class="text-muted">UI design and UX design are two of the most often confused and conflated terms in web and app design.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+{% endblock %}

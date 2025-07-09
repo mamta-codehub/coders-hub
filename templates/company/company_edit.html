@@ -1,0 +1,92 @@
+{% extends 'company/common/layout.html' %}
+{% block content %}
+<div class="col-12 col-xl-12">
+    <h2>Job vacancy Form</h2>
+    <div class="panel panel-danger">
+        <!-- <div class="panel-heading">Add job vacancy</div> -->
+        <div class="panel-body">
+            <div class="card">
+                <div class="card-header">
+                    <h5 class="card-title">Add job Vacancy</h5>
+                    <!-- <h6 class="card-subtitle text-muted">Horizontal Bootstrap layout.</h6> -->
+                </div>
+                <div class="card-body">
+                    <form method="post" action="/company/company_update/{{result.id}}">
+                        {% csrf_token %}
+                        <div class="mb-3 row">
+                            <label class="col-form-label col-sm-2 text-sm-right"> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                                &nbsp;&nbsp;&nbsp;
+                                Title</label>
+                            <div class="col-sm-7">
+                                <input type="Text" class="form-control p-2" placeholder="Enter Title" name="title" value="{{result.Title}}">
+                            </div>
+                        </div>
+                        <div class="mb-3 row">
+                            <label class="col-form-label col-sm-2 text-sm-right">
+                                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                                &nbsp;&nbsp;&nbsp;
+                                Description</label>
+                            <div class="col-sm-7">
+                                <textarea class="form-control p-2" placeholder="Description" rows="3" name="Description">{{result.Description}}</textarea>
+                            </div>
+                        </div>
+                        <div class="mb-3 row">
+                            <label class="col-form-label col-sm-2 text-sm-right"> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                                &nbsp;&nbsp;&nbsp;
+                                Job Type</label>
+                            <div class="col-sm-7">
+                                <input type="text" class="form-control p-2" placeholder="Enter Job Type" name="jobtype" value="{{result.Job_type}}">
+                            </div>
+                        </div>
+                        <div class="mb-3 row">
+                            <label class="col-form-label col-sm-2 text-sm-right"> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                                &nbsp;&nbsp;&nbsp;
+                                Location</label>
+                            <div class="col-sm-7">
+                                <input type="Location" class="form-control p-2" placeholder="Enter Location" name="location" value="{{result.Location}}">
+                            </div>
+                        </div>
+                        <div class="mb-3 row">
+                            <label class="col-form-label col-sm-2 text-sm-right"> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                                &nbsp;&nbsp;&nbsp;
+                                No. Of Vacancy</label>
+                            <div class="col-sm-7">
+                                <input type="noofvacancy" class="form-control p-2" placeholder="vacancy" name="nov" value="{{result.No_of_vacancy}}">
+                            </div>
+                        </div>
+                        <div class="mb-3 row">
+                            <label class="col-form-label col-sm-2 text-sm-right"> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                                &nbsp;&nbsp;&nbsp;
+                                Minimun Salary</label>
+                            <div class="col-sm-7">
+                                <input type="text" class="form-control p-2" placeholder="Enter Minimum Salary" name="minsalary" value="{{result.Min_salary}}">
+                            </div>
+                        </div>
+                        <div class="mb-3 row">
+                            <label class="col-form-label col-sm-2 text-sm-right"> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                                &nbsp;&nbsp;&nbsp;
+                                Experience</label>
+                            <div class="col-sm-7">
+                                <input type="text" class="form-control p-2" placeholder="Enter Experience" name="experience" value="{{result.Experience}}">
+                            </div>
+                        </div>
+                        <div class="mb-3 row">
+                            <label class="col-form-label col-sm-2 text-sm-right"> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                                &nbsp;&nbsp;&nbsp;
+                                Date</label>
+                            <div class="col-sm-7">
+                                <input type="text" class="form-control p-2" placeholder="Enter Date" name="Date" value="{{result.Date}}">
+                            </div>
+                        </div>
+                        <div class="mb-3">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                            <button type="submit" class="btn btn-primary">Submit</button>
+                        </div>
+                </div>
+            </div>
+            </form>
+        </div>
+    </div>
+</div>
+</div>
+</div>
+{% endblock %}

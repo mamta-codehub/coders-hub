@@ -1,0 +1,102 @@
+{% load static %}
+{% block content %}
+<!DOCTYPE html>
+<html class="no-js" lang="zxx">
+
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="">
+    <meta name="keywords" content="">
+    <meta name="robots" content="index,follow">
+    <title>Coder's Hub</title>
+    <link rel="stylesheet" href="{% static 'user/plugins/bootstrap/css/bootstrap.min.css' %}">
+    <link href="{% static 'user/plugins/icons/css/icons.css' %}" rel="stylesheet">
+    <link href="{% static 'user/plugins/animate/animate.css' %}" rel="stylesheet">
+    <link href="{% static 'user/plugins/bootstrap/css/bootsnav.css' %}" rel="stylesheet">
+    <link href="{% static 'user/css/style.css' %}" rel="stylesheet">
+    <link href="{% static 'user/css/responsiveness.css' %}" rel="stylesheet">
+    <link href="{% static 'user/css/skin/default.css' %}" rel="stylesheet">
+</head>
+
+<body class="blue-skin">
+    {% include 'user/common/header.html' %}
+    <div class="page-title light" style="background:url('{% static "user/img/project1.jpg" %}');>
+        <div class="container">
+            <div class="page-caption">
+                <h2 style="text-align: center;"> Download Project </h2>
+                <p style="text-align: center;"><a href="#" title="Home">Home</a> <i class="ti-arrow-right"></i> Project With Source Code </p>
+            </div>
+        </div>
+    </div>
+    <section class="padd-0 gray">
+        <div class="container">
+            <div class="col-md-12">
+                <form method="post" action="/user/project/">
+                    {% csrf_token %}
+                    <fieldset class="search-form">
+                        <div class="col-md-4 col-sm-4 padd-0">
+                            <h3 class="text-center"> Select Technology</h3>
+                        </div>
+                        <div class="col-md-5 col-sm-3 padd-0">
+                            <select class="wide form-control"  id="inputState" name="tech_name" required="">
+                                   <option selected>Choose...</option>
+                                {% for row in tech_result %}
+                                <option value="{{row.id}}">{{row.tech_name}}</option>
+                                {% endfor %}
+                            </select>
+                        </div>
+                        <div class="col-sm-2 padd-0 m-clear" style="float: right; margin-right: 25px;">
+                            <button type="submit" class="btn theme-btn full-width height-50 radius-0">SEARCH</button>
+                        </div>
+                    </fieldset>
+                </form>
+            </div>
+        </div>
+    </section>
+    <section class="gray">
+        <div class="container">
+            <h2 align="center">Download Projects&nbsp; | &nbsp; <a href="/user/upload_project" style="color:red;">Click Here to Upload Project</a></h2><br>
+            <table border="1" align="center" cellpadding="10" cellspacing="1" width="1350" height="90" class="table-hover">
+                <tr style="background-color:#f6fafd; color: black;text-align: center; font-weight: bold;">
+                    <th>PId</th>
+                    <th>Title</th>
+                    <th>Abstract</th>
+                    <th>Technology</th>
+                    <th>Database</th>
+                    <th>Tool</th>
+                    <th>View More Details</a></th>
+                </tr>
+                {% for row in result %}
+                <tr style="background-color:#f6fafd; color: black;text-align: justify-all; font-weight: bold;">
+                    <td>{{row.id}}</td>
+                    <td>{{row.title}}</td>
+                    <td>{{row.abstract}}</td>
+                    <td>{{row.tech.tech_name}}</td>
+                    <td>{{row.database}}</td>
+                    <td>{{row.tool}}</td>
+                    <td><a href="/user/project_download/{{row.id}}">View More Details</a></td>
+                </tr>
+                {% endfor %}
+            </table>
+        </div>
+    </section>
+    {% include 'user/common/footer.html' %}
+    <script src="{% static 'user/js/jquery.min.js' %}"></script>
+    <script src="{% static 'user/plugins/bootstrap/js/bootstrap.min.js' %}"></script>
+    <script src="{% static 'user/plugins/bootstrap/js/bootsnav.js' %}"></script>
+    <script src="{% static 'user/js/viewportchecker.js' %}"></script>
+    <script src="{% static 'user/plugins/slick-slider/slick.js' %}"></script>
+    <script src="{% static 'user/plugins/bootstrap/js/bootstrap-wysihtml5.js' %}"></script>
+    <script src="{% static 'user/plugins/aos-master/aos.js' %}"></script>
+    <script src="{% static 'user/plugins/nice-select/js/jquery.nice-select.min.js' %}"></script>
+    <script src="{% static 'user/js/custom.js"></script>
+    <script src="{% static 'user/js/jQuery.style.switcher.js' %}"></script>
+    <script>
+    AOS.init();
+    </script>
+</body>
+
+</html>
+{% endblock %}

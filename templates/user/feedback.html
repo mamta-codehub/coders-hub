@@ -1,0 +1,86 @@
+{% load static %}
+{% block content %}
+<!DOCTYPE html>
+<html class="no-js" lang="zxx">
+
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="">
+    <meta name="keywords" content="">
+    <meta name="robots" content="index,follow">
+    <title>Coder's Hub</title>
+    <link rel="stylesheet" href="{% static 'user/plugins/bootstrap/css/bootstrap.min.css' %}">
+    <link href="{% static 'user/plugins/icons/css/icons.css' %}" rel="stylesheet">
+    <link href="{% static 'user/plugins/animate/animate.css' %}" rel="stylesheet">
+    <link href="{% static 'user/plugins/bootstrap/css/bootsnav.css' %}" rel="stylesheet">
+    <link href="{% static 'user/css/style.css' %}" rel="stylesheet">
+    <link href="{% static 'user/css/responsiveness.css' %}" rel="stylesheet">
+    <link href="{% static 'user/css/skin/default.css' %}" rel="stylesheet">
+</head>
+
+<body class="blue-skin">
+    {% include 'user/common/header.html' %}
+    <div class="page-title light" style="background:url('{% static "user/img/feed_back.jp" %}');">
+        <div class="container">
+            <div class="page-caption">
+                <h2 style="text-align: center;">All Feedback</h2>
+                <p style="text-align: center;"><a href="#" title="Home">Home</a> <i class="ti-arrow-right"></i> Post Feedback</p>
+            </div>
+        </div>
+    </div>
+    <section class="gray">
+        <div class="container">
+            <div class="col-md-6 col-sm-6">
+                <div class="title-content text-left">
+                    <h5 class="sub-title">Drop Us</h5>
+                    <br />
+                    <h2 class="hny-title">Get In Touch</h2>
+                    <p class="mt-4 mb-4 pr-lg-5">Hi there, We are available 24/7 by e-mail or by phone. Drop us line so we can talk futher about that.</p>
+                </div>
+                <img src="{% static 'user/img/feedback.png' %}" alt="" class="img-responsive" style="height: 300px;">
+            </div>
+            <div class="col-md-6 col-sm-6">
+                <div class="title-content text-left">
+                    <h2>Send Us A feedback</h2>
+                </div><br><br>
+                <div class="log-box">
+                    <form class="log-form" action="/user/feedback_store" method="post">
+                        {% csrf_token %}
+                        <div class="form-group">
+                            <label>How do you rate your overall expericence.....</label><br>
+                            <input type="radio" name="rate" value="Excellent" id="r1" required> Excellent
+                            <input type="radio" name="rate" value="Good" id="r2" style="margin-left:15px;" required> Good
+                            <input type="radio" name="rate" value="Average" id="r3" style="margin-left:15px;" required> Average
+                            <input type="radio" name="rate" value="Bad" id="r4" style="margin-left:15px;" required> Bad
+                        </div>
+                        <div class="form-group">
+                            <label>Message:</label>
+                            <textarea class="form-control height-120 col-md-6" placeholder="Message" name="message" required></textarea>
+                        </div>
+                        <div class="form-group text-right">
+                            <button class="btn theme-btn " name="submit">Post Feedback</button>
+                        </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    {% include 'user/common/footer.html' %}
+    <script src="{% static 'user/js/jquery.min.js' %}"></script>
+    <script src="{% static 'user/plugins/bootstrap/js/bootstrap.min.js' %}"></script>
+    <script src="{% static 'user/plugins/bootstrap/js/bootsnav.js' %}"></script>
+    <script src="{% static 'user/js/viewportchecker.js' %}"></script>
+    <script src="{% static 'user/plugins/slick-slider/slick.js' %}"></script>
+    <script src="{% static 'user/plugins/bootstrap/js/bootstrap-wysihtml5.js' %}"></script>
+    <script src="{% static 'user/plugins/aos-master/aos.js' %}"></script>
+    <script src="{% static 'user/plugins/nice-select/js/jquery.nice-select.min.js' %}"></script>
+    <script src="{% static 'user/js/custom.js"></script>
+    <script src="{% static 'user/js/jQuery.style.switcher.js' %}"></script>
+    <script>
+    AOS.init();
+    </script>
+</body>
+
+</html>
+{% endblock %}

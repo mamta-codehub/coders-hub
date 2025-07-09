@@ -1,0 +1,87 @@
+{% extends 'company/common/layout.html' %}
+{% block content %}
+{% load static %}
+<div class="row mb-2 mb-xl-3">
+    <div class="col-auto d-none d-sm-block">
+        <h3>Dashboard</h3>
+    </div>
+    <div class="row">
+        <div class="col-12 col-sm-6 col-xxl-3 d-flex">
+            <div class="card flex-fill">
+                <div class="card-body py-4">
+                    <div class="d-flex align-items-start">
+                        <div class="flex-grow-1"><a href="/company/add_application/">
+                                <h3 class="mb-2">Add Job</h3>
+                            </a><br>
+                            <p class="mb-2"></p>
+                            <div class="mb-0">
+                            </div>
+                        </div>
+                        <div class="d-inline-block ms-3">
+                            <div class="stat">
+                                <i class="align-middle text-success" data-feather="briefcase"></i>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="col-12 col-sm-6 col-xxl-3 d-flex">
+            <div class="card flex-fill">
+                <div class="card-body py-4">
+                    <div class="d-flex align-items-start">
+                        <div class="flex-grow-1"><a href="/company/all_vacancy/">
+                                <h3 class="mb-2">VEIW ALL VACANCY</h3>
+                            </a><br>
+                            <p class="mb-2"></p>
+                            <div class="mb-0">
+                            </div>
+                        </div>
+                        <div class="d-inline-block ms-3">
+                            <div class="stat">
+                                <i class="align-middle text-success" data-feather="list"></i>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="col-12 col-sm-6 col-xxl-3 d-flex">
+            <div class="card flex-fill">
+                <div class="card-body py-4">
+                    <div class="d-flex align-items-start">
+                        <div class="flex-grow-1"><a href="/company/all_job_application/">
+                                <h3 class="mb-2">ALL JOB APPLICATION</h3>
+                            </a>
+                            <p class="mb-2"></p>
+                        </div>
+                        <div class="d-inline-block ms-3">
+                            <div class="stat">
+                                <i class="align-middle text-danger" data-feather="list"></i>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="col-12 col-sm-6 col-xxl-3 d-flex">
+            <div class="card flex-fill">
+                <div class="card-body py-4">
+                    <div class="d-flex align-items-start">
+                        <div class="flex-grow-1"><a href="/user/login_company/">
+                                <h3 class="mb-2">LOG-OUT</h3>
+                                <p class="mb-2"></p>
+                        </div>
+                        <div class="d-inline-block ms-3">
+                            <div class="stat">
+                                <i class="align-middle text-info" data-feather="log-out"></i>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+</div>
+{% endblock %}

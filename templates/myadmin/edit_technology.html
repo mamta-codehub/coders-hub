@@ -1,0 +1,30 @@
+{% extends 'myadmin/common/layout.html' %}
+{% block content %}
+<div class="col-md-12">
+    <div class="card">
+        <div class="card-header">
+            <h5 class="card-title">Update Technology</h5>
+        </div>
+        <div class="card-body">
+            <form method="post" action="/myadmin/update_technology/{{tech.id}}">
+                {% csrf_token %}
+                <div class="mb-3 row">
+                    <label class="col-form-label col-sm-2 text-sm-right">Technology Name</label>
+                    <div class="col-sm-6">
+                        <input type="text" class="form-control p-2" placeholder="Technology name" name="tech" value={{tech.tech_name}}>
+                    </div>
+                </div>
+                <div class="md">
+                    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                    <button type="submit" class="btn btn-primary sm">Update</button>
+                </div>
+            </form>
+        </div>
+    </div>
+</div>
+{% endblock %}

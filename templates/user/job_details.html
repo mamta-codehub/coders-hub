@@ -1,0 +1,97 @@
+{% load static %}
+{% block content %}
+<!DOCTYPE html>
+<html class="no-js" lang="zxx">
+
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="">
+    <meta name="keywords" content="">
+    <meta name="robots" content="index,follow">
+    <title>Coder's Hub</title>
+    <link rel="stylesheet" href="{% static 'user/plugins/bootstrap/css/bootstrap.min.css' %}">
+    <link href="{% static 'user/plugins/icons/css/icons.css' %}" rel="stylesheet">
+    <link href="{% static 'user/plugins/animate/animate.css' %}" rel="stylesheet">
+    <link href="{% static 'user/plugins/bootstrap/css/bootsnav.css' %}" rel="stylesheet">
+    <link href="{% static 'user/css/style.css' %}" rel="stylesheet">
+    <link href="{% static 'user/css/responsiveness.css' %}" rel="stylesheet">
+    <link href="{% static 'user/css/skin/default.css' %}" rel="stylesheet">
+</head>
+
+<body class="blue-skin">
+    {% include 'user/common/header.html' %}
+    <div class="page-title light" style="background:url('{% static "user/img/aja.jpg" %}');>
+        <div class="container">
+            <div class="page-caption">
+                <h2 style="text-align: center;"> View Job Details </h2>
+                <p style="text-align: center;"><a href="#" title="Home">Home</a> <i class="ti-arrow-right"></i> View Job Details </p>
+            </div>
+        </div>
+    </div>
+    <section class="gray">
+        <div class="container">
+            <h2 align="center">{{result.Title}}</h2><br>
+            <table border="1" align="center" cellpadding="10" cellspacing="1" class="table-hover width" width="300">
+                <tr align="center">
+                    <th>Job Id</th>
+                    <td>{{result.id}}</td>
+                </tr>
+                <tr align="center">
+                    <th>Title</th>
+                    <td>{{result.Title}}</td>
+                </tr>
+                <tr align="center">
+                    <th>Description</th>
+                    <td>{{result.Description}}</td>
+                </tr>
+                <tr align="center">
+                    <th>Job Type</th>
+                    <td>{{result.Job_type}}</td>
+                </tr>
+                <tr align="center">
+                    <th>Location</th>
+                    <td>{{result.Location}}</td>
+                </tr>
+                <tr align="center">
+                    <th>No Of Vacancy</th>
+                    <td>{{result.No_of_vacancy}}</td>
+                <tr>
+                <tr align="center">
+                    <th>Experience</th>
+                    <td>{{result.Experience}}</td>
+                </tr>
+                <tr align="center">
+                    <th>Date</th>
+                    <td>{{result.Date}}</td>
+                </tr>
+                <tr align="center">
+                    <th>Company Name</th>
+                    <td>{{result.user.username}}</td>
+                </tr>
+                <tr>
+                    <td align="center" style="padding: 10px;" colspan="2">
+                        <a href="/user/job_apply/{{result.id}}" class="btn theme-btn">Apply Now</a>
+                </tr>
+            </table>
+        </div>
+    </section>
+    {% include 'user/common/footer.html' %}
+    <script src="{% static 'user/js/jquery.min.js' %}"></script>
+    <script src="{% static 'user/plugins/bootstrap/js/bootstrap.min.js' %}"></script>
+    <script src="{% static 'user/plugins/bootstrap/js/bootsnav.js' %}"></script>
+    <script src="{% static 'user/js/viewportchecker.js' %}"></script>
+    <script src="{% static 'user/plugins/slick-slider/slick.js' %}"></script>
+    <script src="{% static 'user/plugins/bootstrap/js/bootstrap-wysihtml5.js' %}"></script>
+    <script src="{% static 'user/plugins/aos-master/aos.js' %}"></script>
+    <script src="{% static 'user/plugins/nice-select/js/jquery.nice-select.min.js' %}"></script>
+    <script src="{% static 'user/js/custom.js"></script>
+    <script src="{% static 'user/js/jQuery.style.switcher.js' %}"></script>
+    <script>
+    AOS.init();
+    </script>
+</body>
+
+</html>
+{% endblock %}
